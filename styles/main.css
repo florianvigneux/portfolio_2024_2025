@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Poppins:wght@100..900&family=Yeseva+One&display=swap');
+
+/* Couleurs */
+:root {
+    --text_accent_color: #469f7e;
+    --text_main_color: #323232;
+    --text_other_color: #a3a4a6;
+    --page_background: #fafbfb;
+    --background_button_hover: rgba(68, 68, 68, 0.1);
+    --header_background: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text_accent_color: #469f7e;
+        --text_main_color: #e8e8e8;
+        --text_other_color: #757575;
+        --page_background: #191919;
+        --background_button_hover: rgba(255, 255, 255, 0.1);
+        --header_background: #212121;
+    }
+}
+
+
+/* Global */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text_main_color);
+    background-color: var(--page_background);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: var(--header_background);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 75em;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--text_main_color);
+    flex: 1;
+    text-align: left;
+}
+
+nav {
+    flex: 2;
+    text-align: center;
+}
+
+.icons {
+    flex: 1;
+    text-align: right;
+}
+
+.icons a {
+    margin-left: 10px;
+    color: var(--text_main_color);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+header nav a, header .dropbtn {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--text_main_color);
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+header nav a:hover, header .dropbtn:hover {
+    background: var(--background_button_hover);
+}
+
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--header_background);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 570px; /* augmente la largeur du menu déroulant */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text_main_color);
+    padding: 8px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--background_button_hover);
+}
+
+
+/* Main */
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 550;
+    margin: 20px 0;
+}
+
+img {
+    width: 80%;
+    max-width: 1300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Cartes des images */
+main section {
+    flex: 1 1 300px;
+    max-width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.3);
+    min-width: 350px;   /* largeur minimale plus grande */
+    min-height: 180px;  /* ajuste la hauteur si besoin */
+    padding: 1.5em;
+    box-sizing: border-box;
+}
+
+main section:hover {
+    transform: scale(1.02);
+}
+
+main section p {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+main section a {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--text_accent_color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+main section a:hover {
+    background-color: #2c765c;
+}
+
+
+/* Correction position des images/ */
+main section:first-child {
+    background-position: 67% 75%;
+}
+main section:last-child {
+    background-position: 78% 75%;
+}
+
+
+/* Texte */
+.texte {
+
+    color: var(--text_main_color);
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texte h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text_accent_color);
+    text-align:left
+}
+
+.texte p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+p a {
+    text-decoration: none;
+    color: var(--text_accent_color);
+}
+
+p a:hover, p a:focus {
+    text-decoration: underline;
+    color: var(--text_accent_color); /* Optionnel : un vert plus foncé au survol */
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--header_background);
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: var(--text_other_color);
+    font-size: 14px;
+}
+
+
+/* Responsive Design */
+/* Desktop et grands écrans */
+@media (min-width: 1024px) {
+    main {
+        margin-left: 5%; /* Marge à gauche */
+        margin-right: 5%; /* Marge à droite */
+    }
+}
+
+/* Smartphones et tablettes */
+@media (max-width: 1000px) {
+    main {
+        flex-wrap: wrap; /* Permet le retour à la ligne */
+        justify-content: center; /* Centre les sections sur plusieurs lignes */
+    }
+
+    main section {
+        flex: 1 1 100%; /* Occupe toute la largeur */
+        max-width: 100%; /* Largeur maximale adaptée */
+        height: 300px; /* Réduit la hauteur */
+    }
+}
